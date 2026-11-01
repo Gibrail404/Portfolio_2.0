@@ -1,37 +1,46 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Making AI agents safe to run on live stores | Gibrail Zaidi</title>
 <meta name="description" content="Case study: verify-before-report flows, human-in-the-loop questions and approval gates for AI agents on live e-commerce stores.">
+<meta property="og:title" content="Making AI agents safe to run on live stores | Gibrail Zaidi">
+<meta property="og:description" content="Case study: verify-before-report flows, human-in-the-loop questions and approval gates for AI agents on live e-commerce stores.">
+<meta property="og:image" content="https://gibrailzaidi.netlify.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body data-root="../">
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav"><div class="container">
-<a class="brand" href="../index.html"><span class="mono">GZ</span><span>Gibrail Zaidi</span></a>
-<nav class="links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
-<div style="display:flex;gap:10px;align-items:center"><a class="btn small primary" href="../resume.html">Resume</a><button class="btn icon-btn" id="theme-toggle" aria-label="Toggle theme">&#9728;</button><button class="btn icon-btn menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button></div>
-</div></header>
+<div class="progress" id="progress"></div>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="../index.html" aria-label="Gibrail Zaidi, home"><span class="logo">GZ</span><span>Gibrail Zaidi</span></a>
+<nav class="top-links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#ask">Ask</a><a href="../index.html#contact">Contact</a></nav>
+<div class="actions">
+<button class="btn sm ghost" id="pal-open" aria-haspopup="dialog" aria-label="Open command palette">Search <span class="kbd">Ctrl K</span></button>
+<a class="btn sm primary" href="../resume.html">Resume</a>
+<button class="btn icon" id="theme-toggle" aria-label="Toggle light and dark theme">&#9728;</button>
+<button class="btn icon menu" id="menu-btn" aria-label="Open menu">&#9776;</button>
+</div>
+</div>
+</header>
 <main id="main">
 
-<section class="cs-hero"><div class="container">
-<a class="crumb" href="../index.html#work">&larr; All case studies</a>
-<span class="kicker">Case study</span>
-<h1 style="font-size:clamp(30px,4.4vw,46px)">Making AI agents safe to run on live stores</h1>
+<section class="cs-top"><div class="wrap">
+<a class="crumb" href="../index.html#work">&larr; portfolio.run / case_studies / safe_agents</a>
+<div class="status-row"><span class="chip info">kind: case_study</span><span class="chip ok">status: ok</span></div>
+<h1>Making AI agents safe to run on live stores</h1>
 <p class="lead">Verify-before-report flows, structured human-in-the-loop questions and approval gates for agents that change live e-commerce stores.</p>
-<div class="meta">
-<div><small>Role</small>Applied AI Engineer</div>
-<div><small>Domain</small>E-commerce, live stores</div>
-<div><small>Focus</small>Agent reliability and safety</div>
-<div><small>Client names</small>Not shown</div>
-</div></div></section>
-<div class="container"><article class="cs">
+<div class="meta"><div><small>Role</small>Applied AI Engineer</div><div><small>Domain</small>E-commerce, live stores</div><div><small>Focus</small>Agent reliability and safety</div><div><small>Client names</small>Not shown</div></div>
+</div></section>
+
+<div class="wrap"><article class="cs">
 <h2>The problem</h2>
 <p>A demo agent can be wrong and nobody gets hurt. A production agent that edits a storefront, publishes content or changes what shoppers see cannot afford that. The most common failure was not a bad answer. It was an agent <strong>saying a task was complete when it was not</strong>: a save worked, the generated output was empty, and nothing reached the page.</p>
 <div class="callout"><p><strong>Goal:</strong> agents that change live systems, with no silent failures and a person in control of anything risky.</p></div>
-
 <h2>Constraints</h2>
 <ul>
 <li>The agents act on live storefronts, so a wrong action is visible to real shoppers.</li>
@@ -39,37 +48,48 @@
 <li>Model gateways reject schemas they do not fully support, so tool definitions must stay simple.</li>
 </ul>
 
+<h2>Architecture explorer</h2>
+<p class="xhint">Click a node to see the design decision, the failure it prevents and the fix.</p>
+<div class="explorer">
+<div class="xnodes" role="group" aria-label="Architecture nodes"><button class="xnode " type="button" aria-pressed="false" data-t="Save the change" data-a="Persist the change first, as its own step, so state is recoverable." data-b="A save can succeed while the rest of the flow fails, so a successful save is not success." data-c="Success is reported only after the check step passes.">Save the change<span class="k">step</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Generate the result" data-a="Generate the result as a separate step so it can be inspected." data-b="Generated output can be empty or wrong while nothing visibly breaks." data-c="The check step rejects empty or wrong output.">Generate the result<span class="k">step</span></button><button class="xnode warn" type="button" aria-pressed="false" data-t="Check the result" data-a="Check that the result exists and is not empty before applying it." data-b="The agent said a task was complete when it was not, because the output was empty." data-c="Stop and report the failure honestly instead of moving on.">Check the result<span class="k">guard</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Ask a structured question" data-a="When unsure the agent asks, with a clear prompt, a small set of options and a response ID." data-b="Free-text clarification is easy to misread and hard to audit." data-c="The response ID maps the answer back to the exact question.">Ask a structured question<span class="k">human</span></button><button class="xnode stop" type="button" aria-pressed="false" data-t="Human approval" data-a="Build previews first, a person reviews and approves, and only then does anything go live." data-b="The agent could change the wrong thing on a live store." data-c="One small gate before go-live removes that class of incidents.">Human approval<span class="k">human</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Tool schemas" data-a="Keep tool schemas boring: plain arrays and simple objects that are JSON Schema compatible." data-b="Strict model gateways rejected clever schema types." data-c="Simple schemas work on every provider.">Tool schemas<span class="k">guard</span></button><button class="xnode warn" type="button" aria-pressed="false" data-t="Retry loop" data-a="Agents retry, so limits and loud failures matter more than in normal code." data-b="A selector built from an element id returned an input element instead of a string, and the agent retried again and again." data-c="Read the attribute, validate it as a safe identifier, fall back to a structural path, and cap retries.">Retry loop<span class="k">bug</span></button></div>
+<aside class="xpanel" id="xpanel" aria-live="polite"><h4></h4><dl><div><dt>Decision</dt><dd class="da"></dd></div><div><dt>Risk or failure</dt><dd class="db"></dd></div><div><dt>Fix or next step</dt><dd class="dc"></dd></div></dl></aside>
+</div>
+
 <h2>Design decisions</h2>
 <h3>1. Verify before reporting</h3>
 <p>Every flow that changes something live follows the same order, and any failed step is reported honestly instead of skipped.</p>
-<div class="flow"><span class="node b">Save</span><span class="arrow">&rarr;</span><span class="node b">Generate</span><span class="arrow">&rarr;</span><span class="node a">Check output</span><span class="arrow">&rarr;</span><span class="node b">Apply</span><span class="arrow">&rarr;</span><span class="node g">Report</span></div>
-<div class="flow"><span class="node a">Check fails</span><span class="arrow">&rarr;</span><span class="node r">Stop and report the failure</span></div>
+<div class="flow"><span class="node">Save</span><span class="arrow">&rarr;</span><span class="node">Generate</span><span class="arrow">&rarr;</span><span class="node">Check output</span><span class="arrow">&rarr;</span><span class="node">Apply</span><span class="arrow">&rarr;</span><span class="node">Report</span></div>
 <h3>2. Structured human-in-the-loop questions</h3>
 <p>When the agent is unsure, it asks, it does not guess. The question has a clear prompt, a small set of options and a response ID, so the answer maps back to the exact question. This is easier to render in a UI, easier to audit and harder to misread than free text.</p>
 <h3>3. Approval before going live</h3>
-<p>For bigger changes, such as an experiment across many products, the agent builds previews first. A person reviews them and approves. Only then does anything go live. One small gate removes a whole class of "the agent changed the wrong thing" incidents.</p>
-<div class="flow"><span class="node b">Build previews</span><span class="arrow">&rarr;</span><span class="node a">Person reviews</span><span class="arrow">&rarr;</span><span class="node p">Approve</span><span class="arrow">&rarr;</span><span class="node g">Go live</span></div>
+<p>For bigger changes, such as an experiment across many products, the agent builds previews first. A person reviews them and approves. Only then does anything go live.</p>
+<div class="flow"><span class="node">Build previews</span><span class="arrow">&rarr;</span><span class="node">Person reviews</span><span class="arrow">&rarr;</span><span class="node">Approve</span><span class="arrow">&rarr;</span><span class="node">Go live</span></div>
 <h3>4. Boring tool schemas</h3>
 <p>Strict model gateways rejected clever schema types. Plain arrays and simple objects work everywhere, so I keep tool schemas boring and JSON Schema compatible.</p>
-
 <h2>A failure that taught a lesson</h2>
 <p>One agent used browser automation to edit page elements and built selectors from an element's <strong>id</strong>. On some pages a form contained a child input named "id", and reading the property returned that input instead of the string. The selector became an object string and the agent retried again and again.</p>
 <p><strong>Fix:</strong> read the attribute directly, validate it as a safe identifier, and fall back to a structural path otherwise. <strong>Lesson:</strong> agents amplify small bugs because they retry, so put limits on retries and make failures loud.</p>
-
 <h2>What I would improve</h2>
 <ul>
 <li>Turn every production failure into an automated eval case that runs before each release.</li>
 <li>Add per-step tracing dashboards so the cost and latency of each tool call are visible.</li>
 <li>Re-check live state right before a write, and re-ask for approval if it changed since approval.</li>
 </ul>
-
 <h2>Read more</h2>
 <p>The full write-up: <a href="https://medium.com/@gibrailzaidi/why-an-ai-agent-should-never-say-done-until-it-has-checked-b7a6f9748ed5" target="_blank" rel="noopener">Why an AI Agent Should Never Say "Done" Until It Has Checked</a> (Medium).</p>
 <div class="next"><a class="btn" href="../index.html#work">&larr; All case studies</a><a class="btn primary" href="face-forward.html">Next: Face-Forward &rarr;</a></div>
 </article></div>
 
 </main>
-<footer class="foot"><div class="container">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer</div></footer>
+<footer class="foot"><div class="wrap">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer &middot; press Ctrl K to jump anywhere</div></footer>
+<div class="pal-back" id="pal-back" role="presentation">
+<div class="pal" role="dialog" aria-modal="true" aria-label="Command palette">
+<input id="pal-input" type="text" placeholder="Jump to a section, case study or link..." aria-label="Search commands" autocomplete="off">
+<ul id="pal-list" role="listbox"></ul>
+<div class="pal-f"><span>&uarr;&darr; move</span><span>Enter open</span><span>Esc close</span></div>
+</div>
+</div>
 <script src="../script.js"></script>
 <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
-</body></html>
+</body>
+</html>
