@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Face-Forward: attendance with anti-spoofing | Gibrail Zaidi</title>
+<meta name="description" content="Case study: face-recognition employee attendance system with anti-spoofing, built at an office hackathon.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="container">
+<a class="brand" href="../index.html"><span class="mono">GZ</span><span>Gibrail Zaidi</span></a>
+<nav class="links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+<div style="display:flex;gap:10px;align-items:center"><a class="btn small primary" href="../resume.html">Resume</a><button class="btn icon-btn" id="theme-toggle" aria-label="Toggle theme">&#9728;</button><button class="btn icon-btn menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button></div>
+</div></header>
+<main id="main">
+
+<section class="cs-hero"><div class="container">
+<a class="crumb" href="../index.html#work">&larr; All case studies</a>
+<span class="kicker">Case study</span>
+<h1 style="font-size:clamp(30px,4.4vw,46px)">Face-Forward: attendance with anti-spoofing</h1>
+<p class="lead">A face-recognition employee attendance system with secure punch in and punch out. Winner at an office hackathon (team of four).</p>
+<div class="meta">
+<div><small>Role</small>Lead engineer, team of 4</div>
+<div><small>Result</small>Hackathon winner</div>
+<div><small>Focus</small>Computer vision, security</div>
+<div><small>Code</small><a href="https://github.com/Gibrail404/face_forward" target="_blank" rel="noopener">GitHub</a></div>
+</div></div></section>
+<div class="container"><article class="cs">
+<h2>The problem</h2>
+<p>ID cards, fingerprints and manual registers are slow and easy to cheat (buddy punching). The goal was a contactless attendance system that HR can trust, and that resists someone holding up a photo of a colleague.</p>
+<h2>What I built</h2>
+<ul>
+<li>Punch in and punch out with face recognition in the browser, using face-api.js and TensorFlow.js.</li>
+<li>Anti-spoofing checks so a photo or a screen does not pass.</li>
+<li>Face embeddings stored in MongoDB with vector search for matching.</li>
+<li>Admin dashboard with attendance reports, late arrivals, early exits and absentees; exports to CSV, Excel and PDF.</li>
+<li>JWT authentication, hashed passwords and email alerts.</li>
+</ul>
+<h2>Architecture</h2>
+<div class="flow"><span class="node b">Camera in browser</span><span class="arrow">&rarr;</span><span class="node p">Face embedding</span><span class="arrow">&rarr;</span><span class="node a">Anti-spoof check</span><span class="arrow">&rarr;</span><span class="node b">Vector match</span><span class="arrow">&rarr;</span><span class="node g">Attendance log</span></div>
+<h2>Design decisions</h2>
+<ul>
+<li><strong>Run detection in the browser.</strong> Keeps latency low and avoids streaming video to a server.</li>
+<li><strong>Treat spoofing as a first-class requirement.</strong> A recognition system that a photo can fool is not secure.</li>
+<li><strong>Store embeddings, not photos,</strong> to reduce the sensitive data held.</li>
+</ul>
+<h2>What I would improve</h2>
+<ul>
+<li>Measure false accept and false reject rates on a labelled test set instead of relying on demos.</li>
+<li>Add liveness checks that are harder to bypass, and a human review path for low-confidence matches.</li>
+<li>Add consent, retention limits and deletion for biometric data.</li>
+</ul>
+<div class="next"><a class="btn" href="safe-agents.html">&larr; Previous</a><a class="btn primary" href="smartleads-ai.html">Next: SmartLeads-AI &rarr;</a></div>
+</article></div>
+
+</main>
+<footer class="foot"><div class="container">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer</div></footer>
+<script src="../script.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body></html>
