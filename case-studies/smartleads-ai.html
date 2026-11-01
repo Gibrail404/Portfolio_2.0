@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartLeads-AI CRM: Gemini lead scoring | Gibrail Zaidi</title>
+<meta name="description" content="Case study: an AI-powered CRM that scores leads with an LLM, with analytics, roles and CI/CD.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="container">
+<a class="brand" href="../index.html"><span class="mono">GZ</span><span>Gibrail Zaidi</span></a>
+<nav class="links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
+<div style="display:flex;gap:10px;align-items:center"><a class="btn small primary" href="../resume.html">Resume</a><button class="btn icon-btn" id="theme-toggle" aria-label="Toggle theme">&#9728;</button><button class="btn icon-btn menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button></div>
+</div></header>
+<main id="main">
+
+<section class="cs-hero"><div class="container">
+<a class="crumb" href="../index.html#work">&larr; All case studies</a>
+<span class="kicker">Case study</span>
+<h1 style="font-size:clamp(30px,4.4vw,46px)">SmartLeads-AI CRM: Gemini lead scoring</h1>
+<p class="lead">An AI-powered CRM that captures and scores leads, schedules follow-ups and shows performance on a dashboard.</p>
+<div class="meta">
+<div><small>Role</small>Solo build</div>
+<div><small>Focus</small>LLM scoring, delivery</div>
+<div><small>Stack</small>MERN, Gemini API, Docker</div>
+<div><small>Code</small><a href="https://github.com/Gibrail404/SmartLeads-AI_CRM" target="_blank" rel="noopener">GitHub</a></div>
+</div></div></section>
+<div class="container"><article class="cs">
+<h2>The problem</h2>
+<p>Sales teams lose time deciding which leads to chase first. The goal was a CRM that ranks leads by likely conversion so people spend time where it matters.</p>
+<h2>What I built</h2>
+<ul>
+<li>Lead management with search, multi-criteria filters and pagination.</li>
+<li>AI lead scoring with the Gemini API that predicts conversion probability for each lead.</li>
+<li>Interactive dashboard for lead counts, AI scores, conversion rates and KPIs.</li>
+<li>Role-based access with JWT for admins and team members, and follow-up scheduling.</li>
+<li>Docker and a GitHub Actions pipeline: build and test on push, deploy frontend and backend with health checks.</li>
+</ul>
+<h2>Architecture</h2>
+<div class="flow"><span class="node b">Lead data</span><span class="arrow">&rarr;</span><span class="node p">Gemini scoring</span><span class="arrow">&rarr;</span><span class="node b">Scores stored</span><span class="arrow">&rarr;</span><span class="node g">Ranked dashboard</span></div>
+<h2>Design decisions</h2>
+<ul>
+<li><strong>Show the score next to the evidence.</strong> A number alone is hard to trust, so the lead details stay visible beside it.</li>
+<li><strong>Automate delivery.</strong> A CI/CD pipeline with a health check means every change is built, tested and verified before it goes live.</li>
+</ul>
+<h2>What I would improve</h2>
+<ul>
+<li>Evaluate the scoring against real conversion outcomes with a labelled set, instead of trusting model output.</li>
+<li>Add a rationale for each score and a feedback button, so users can correct wrong scores.</li>
+<li>Log prompts, scores and cost per lead for tracing and monitoring.</li>
+</ul>
+<div class="next"><a class="btn" href="face-forward.html">&larr; Previous</a><a class="btn primary" href="../index.html#contact">Get in touch &rarr;</a></div>
+</article></div>
+
+</main>
+<footer class="foot"><div class="container">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer</div></footer>
+<script src="../script.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body></html>
