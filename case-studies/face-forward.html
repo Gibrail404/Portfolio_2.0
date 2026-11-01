@@ -1,33 +1,43 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Face-Forward: attendance with anti-spoofing | Gibrail Zaidi</title>
 <meta name="description" content="Case study: face-recognition employee attendance system with anti-spoofing, built at an office hackathon.">
+<meta property="og:title" content="Face-Forward: attendance with anti-spoofing | Gibrail Zaidi">
+<meta property="og:description" content="Case study: face-recognition employee attendance system with anti-spoofing, built at an office hackathon.">
+<meta property="og:image" content="https://gibrailzaidi.netlify.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body data-root="../">
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav"><div class="container">
-<a class="brand" href="../index.html"><span class="mono">GZ</span><span>Gibrail Zaidi</span></a>
-<nav class="links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></nav>
-<div style="display:flex;gap:10px;align-items:center"><a class="btn small primary" href="../resume.html">Resume</a><button class="btn icon-btn" id="theme-toggle" aria-label="Toggle theme">&#9728;</button><button class="btn icon-btn menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button></div>
-</div></header>
+<div class="progress" id="progress"></div>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="../index.html" aria-label="Gibrail Zaidi, home"><span class="logo">GZ</span><span>Gibrail Zaidi</span></a>
+<nav class="top-links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#ask">Ask</a><a href="../index.html#contact">Contact</a></nav>
+<div class="actions">
+<button class="btn sm ghost" id="pal-open" aria-haspopup="dialog" aria-label="Open command palette">Search <span class="kbd">Ctrl K</span></button>
+<a class="btn sm primary" href="../resume.html">Resume</a>
+<button class="btn icon" id="theme-toggle" aria-label="Toggle light and dark theme">&#9728;</button>
+<button class="btn icon menu" id="menu-btn" aria-label="Open menu">&#9776;</button>
+</div>
+</div>
+</header>
 <main id="main">
 
-<section class="cs-hero"><div class="container">
-<a class="crumb" href="../index.html#work">&larr; All case studies</a>
-<span class="kicker">Case study</span>
-<h1 style="font-size:clamp(30px,4.4vw,46px)">Face-Forward: attendance with anti-spoofing</h1>
+<section class="cs-top"><div class="wrap">
+<a class="crumb" href="../index.html#work">&larr; portfolio.run / case_studies / face_forward</a>
+<div class="status-row"><span class="chip info">kind: case_study</span><span class="chip ok">status: ok</span></div>
+<h1>Face-Forward: attendance with anti-spoofing</h1>
 <p class="lead">A face-recognition employee attendance system with secure punch in and punch out. Winner at an office hackathon (team of four).</p>
-<div class="meta">
-<div><small>Role</small>Lead engineer, team of 4</div>
-<div><small>Result</small>Hackathon winner</div>
-<div><small>Focus</small>Computer vision, security</div>
-<div><small>Code</small><a href="https://github.com/Gibrail404/face_forward" target="_blank" rel="noopener">GitHub</a></div>
-</div></div></section>
-<div class="container"><article class="cs">
+<div class="meta"><div><small>Role</small>Lead engineer, team of 4</div><div><small>Result</small>Hackathon winner</div><div><small>Focus</small>Computer vision, security</div><div><small>Code</small><a href="https://github.com/Gibrail404/face_forward" target="_blank" rel="noopener">GitHub</a></div></div>
+</div></section>
+
+<div class="wrap"><article class="cs">
 <h2>The problem</h2>
 <p>ID cards, fingerprints and manual registers are slow and easy to cheat (buddy punching). The goal was a contactless attendance system that HR can trust, and that resists someone holding up a photo of a colleague.</p>
 <h2>What I built</h2>
@@ -38,8 +48,16 @@
 <li>Admin dashboard with attendance reports, late arrivals, early exits and absentees; exports to CSV, Excel and PDF.</li>
 <li>JWT authentication, hashed passwords and email alerts.</li>
 </ul>
+
+<h2>Architecture explorer</h2>
+<p class="xhint">Click a node to see the decision, the risk and the next step.</p>
+<div class="explorer">
+<div class="xnodes" role="group" aria-label="Architecture nodes"><button class="xnode " type="button" aria-pressed="false" data-t="Camera in the browser" data-a="Run detection in the browser with face-api.js and TensorFlow.js." data-b="Keeps latency low and avoids streaming video to a server. False accept and false reject rates were not measured on a labelled set." data-c="Measure both rates on a labelled test set instead of relying on demos.">Camera in the browser<span class="k">input</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Face embedding" data-a="Store embeddings, not photos, to reduce the sensitive data held." data-b="Biometric data needs consent, retention limits and deletion." data-c="Add consent, retention limits and deletion for biometric data.">Face embedding<span class="k">model</span></button><button class="xnode warn" type="button" aria-pressed="false" data-t="Anti-spoof check" data-a="Treat spoofing as a first-class requirement: a recognition system a photo can fool is not secure." data-b="A photo or a screen must not pass." data-c="Add liveness checks that are harder to bypass.">Anti-spoof check<span class="k">guard</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Vector match" data-a="Match embeddings with MongoDB vector search." data-b="Low-confidence matches can be wrong." data-c="Add a human review path for low-confidence matches.">Vector match<span class="k">search</span></button><button class="xnode go" type="button" aria-pressed="false" data-t="Attendance log" data-a="Log punch in and punch out for admin reports, exports and alerts." data-b="Reports are only as good as the matching." data-c="Track match quality alongside attendance data.">Attendance log<span class="k">output</span></button></div>
+<aside class="xpanel" id="xpanel" aria-live="polite"><h4></h4><dl><div><dt>Decision</dt><dd class="da"></dd></div><div><dt>Risk or failure</dt><dd class="db"></dd></div><div><dt>Fix or next step</dt><dd class="dc"></dd></div></dl></aside>
+</div>
+
 <h2>Architecture</h2>
-<div class="flow"><span class="node b">Camera in browser</span><span class="arrow">&rarr;</span><span class="node p">Face embedding</span><span class="arrow">&rarr;</span><span class="node a">Anti-spoof check</span><span class="arrow">&rarr;</span><span class="node b">Vector match</span><span class="arrow">&rarr;</span><span class="node g">Attendance log</span></div>
+<div class="flow"><span class="node">Camera in browser</span><span class="arrow">&rarr;</span><span class="node">Face embedding</span><span class="arrow">&rarr;</span><span class="node">Anti-spoof check</span><span class="arrow">&rarr;</span><span class="node">Vector match</span><span class="arrow">&rarr;</span><span class="node">Attendance log</span></div>
 <h2>Design decisions</h2>
 <ul>
 <li><strong>Run detection in the browser.</strong> Keeps latency low and avoids streaming video to a server.</li>
@@ -56,7 +74,15 @@
 </article></div>
 
 </main>
-<footer class="foot"><div class="container">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer</div></footer>
+<footer class="foot"><div class="wrap">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer &middot; press Ctrl K to jump anywhere</div></footer>
+<div class="pal-back" id="pal-back" role="presentation">
+<div class="pal" role="dialog" aria-modal="true" aria-label="Command palette">
+<input id="pal-input" type="text" placeholder="Jump to a section, case study or link..." aria-label="Search commands" autocomplete="off">
+<ul id="pal-list" role="listbox"></ul>
+<div class="pal-f"><span>&uarr;&darr; move</span><span>Enter open</span><span>Esc close</span></div>
+</div>
+</div>
 <script src="../script.js"></script>
 <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
-</body></html>
+</body>
+</html>
