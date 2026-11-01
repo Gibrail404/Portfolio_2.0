@@ -1,467 +1,285 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Gibrail Zaidi</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gibrail Zaidi | Applied AI Engineer</title>
+  <meta name="description" content="Applied AI Engineer building production LLM agents, MCP tools and human-in-the-loop systems for e-commerce. Case studies, experience and resume.">
+  <meta property="og:title" content="Gibrail Zaidi | Applied AI Engineer">
+  <meta property="og:description" content="Production AI agents that are safe to run on live systems: LLM agents, MCP, RAG, evals and human approval.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gibrailzaidi.netlify.app/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gibrail Zaidi",
+    "jobTitle": "Applied AI Engineer",
+    "url": "https://gibrailzaidi.netlify.app/",
+    "email": "mailto:gibrailzaidi@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/gibrailzaidi/",
+      "https://github.com/Gibrail404",
+      "https://medium.com/@gibrailzaidi"
+    ],
+    "knowsAbout": ["LLM agents", "Model Context Protocol", "Retrieval-augmented generation", "AI evaluation", "Human-in-the-loop systems"]
+  }
+  </script>
 </head>
-
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Gibrail Zaidi</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/ZaidiGibrail" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.facebook.com/gibrail.zaidi/" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/gibrail00/" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://github.com/Gibrail404" class="instagram"><i class="bx bxl-github"></i></a>
-          <a href="https://www.linkedin.com/in/gibrail-zaidi-20023b225/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code"></i> <span>Skills</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#project" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Projects</span></a>
-          </li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="Gibrail Zaidi, home"><span class="mono">GZ</span><span>Gibrail Zaidi</span></a>
+    <nav class="links" id="nav-links" aria-label="Primary">
+      <a href="#work">Case studies</a>
+      <a href="#how">How I build</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn small primary no-print" href="resume.html">Resume</a>
+      <button class="btn icon-btn" id="theme-toggle" aria-label="Toggle light and dark theme">&#9728;</button>
+      <button class="btn icon-btn menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button>
     </div>
-  </header><!-- End Header -->
+  </div>
+</header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Gibrail Zaidi</h1>
-      <p>I'm <span class="typed" data-typed-items="Software Developer Engineer"></span></p>
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Open to Applied AI Engineer roles &middot; Dubai/UAE and remote</span>
+          <h1>I build production AI agents that are <span class="grad">safe to run on live systems.</span></h1>
+          <p class="lead">Applied AI Engineer working on LLM agents, MCP tools and human-in-the-loop workflows for e-commerce. I focus on the part after the demo: verification, approval gates, evals and monitoring.</p>
+          <div class="cta">
+            <a class="btn primary" href="#work">View case studies</a>
+            <a class="btn" href="resume.html">Resume</a>
+            <a class="btn" href="mailto:gibrailzaidi@gmail.com">Email me</a>
+          </div>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/gibrailzaidi/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Gibrail404" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://medium.com/@gibrailzaidi" target="_blank" rel="noopener">Medium</a>
+          </div>
+        </div>
+
+        <aside class="demo" aria-label="Interactive simulation of an agent with verification and approval">
+          <h3>How my agents ship changes</h3>
+          <div class="sub">Interactive simulation (not a live system). Try a good run and a failing run.</div>
+          <ol class="steps" id="demo-steps">
+            <li class="step" data-n="1"><span class="badge">1</span><span class="txt">Save the change</span></li>
+            <li class="step" data-n="2"><span class="badge">2</span><span class="txt">Generate the result</span></li>
+            <li class="step" data-n="3"><span class="badge">3</span><span class="txt">Check the result</span></li>
+            <li class="step" data-n="4"><span class="badge">4</span><span class="txt">Human approval</span></li>
+            <li class="step" data-n="5"><span class="badge">5</span><span class="txt">Go live</span></li>
+          </ol>
+          <div class="demo-actions">
+            <button class="btn small primary" id="demo-run">Run agent task</button>
+            <button class="btn small" id="demo-fail">Simulate a failed check</button>
+            <button class="btn small" id="demo-approve" hidden>Approve</button>
+          </div>
+          <div class="demo-note">Rule: an agent never says "done" until it has checked.</div>
+        </aside>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat"><b>2+ years</b><span>shipping production software</span></div>
+        <div class="stat"><b>Multi-agent</b><span>system in production on live stores</span></div>
+        <div class="stat"><b>MCP</b><span>tools so agents can run experiments</span></div>
+        <div class="stat"><b>2 awards</b><span>hackathon and project</span></div>
+      </div>
     </div>
-  </section><!-- End Hero -->
+  </section>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Passionate software developer engineer with a strong foundation in building robust and scalable
-            applications.
-            Dedicated to continuous learning and exploring innovative solutions to complex problems.
-            Let's create something remarkable together.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Software Developer Engineer</h3>
-            <p class="fst-italic">
-              As a software developer engineer, I am driven by the pursuit of creating innovative solutions that make a
-              meaningful impact.
-              With a keen eye for detail and a passion for excellence, I strive to exceed expectations in every project
-              I undertake.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>2 May 2002</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.coming.soon.com</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Noida</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span id="age"></span></li>
-
-                  <script>
-                    // Set your birth date
-                    const birthDate = new Date(2002, 4, 2); // Note: Months are zero-based, so 4 is May
-                    // Function to calculate age
-                    function calculateAge(birthDate) {
-                      const currentDate = new Date();
-                      let age = currentDate.getFullYear() - birthDate.getFullYear();
-                      const monthDifference = currentDate.getMonth() - birthDate.getMonth();
-                      const dayDifference = currentDate.getDate() - birthDate.getDate();
-
-                      // Adjust age if the current date is before the birthday in the current year
-                      if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-                        age--;
-                      }
-                      return age;
-                    }
-                    // Get the age element and set its value
-                    document.getElementById('age').textContent = calculateAge(birthDate);
-                  </script>
-
-
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Technology</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email</strong> <span>gibrailzaidi@gmail.com</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              As a software developer engineer, I thrive in crafting elegant solutions to intricate technical
-              challenges. With a Bachelor's degree in Technology, I have honed my skills in various programming
-              languages and technologies, allowing me to adapt swiftly to evolving project requirements.
-              I excel in collaborative environments, leveraging my strong communication skills to foster teamwork and
-              deliver exceptional results. My passion for innovation drives me to stay abreast of industry trends and
-              best practices, ensuring that my work is always at the forefront of technological advancements.
-            </p>
-          </div>
-        </div>
-
+  <!-- WHAT I DO -->
+  <section class="alt" id="what">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="kicker">What I do</div>
+        <h2>From a working demo to a system a business can trust</h2>
+        <p>Three areas where I spend most of my time.</p>
       </div>
-    </section><!-- End About Section -->
-
-
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p> -->
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="progress">
-              <span class="skill">JAVA <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">ReactJS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">NodeJS <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Express.js <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="progress">
-              <span class="skill">MongoDB <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
+      <div class="grid3">
+        <div class="card reveal"><div class="ico">&#129302;</div><h3>Agents and MCP</h3><p>Multi-agent systems with tool calling, orchestrated from plan to a live storefront. MCP interfaces so other agents can use my tools.</p></div>
+        <div class="card reveal"><div class="ico">&#128269;</div><h3>RAG and evals</h3><p>Retrieval over real data, golden datasets, quality gates before anything is published, and tracing to see what the system did.</p></div>
+        <div class="card reveal"><div class="ico">&#128737;</div><h3>Reliability and safety</h3><p>Human-in-the-loop approval, verify-before-report flows, guardrails and honest failure messages, so agents are safe on live systems.</p></div>
       </div>
-    </section><!-- End Skills Section -->
+    </div>
+  </section>
 
-
-
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>Passionate and detail-oriented professional with a proven track record in delivering high-quality work.
-            Adept at problem-solving and collaborating with teams to achieve project goals.
-            Continuously seeking opportunities for growth and development in the field of Software Development.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Gibrail Zaidi</h4>
-              <p><em>Dynamic and results-oriented Software Developer with experience in designing, developing, and
-                  deploying high-quality software solutions.
-                  Passionate about leveraging technology to solve complex problems and enhance user experiences.</em>
-              </p>
-              <ul>
-                <li>Noida, Uttar Pradesh, India</li>
-                <li>(91) 1234567890</li>
-                <li>gibrailzaidi@gmail.com.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Technology - CSE<em>(AI&ML)</em></h4>
-              <h5>2021 - 2025</h5>
-              <p><em>Greater Noida Institute of Technology, Greater Noida</em></p>
-
-            </div>
-            <div class="resume-item">
-              <h4>Senior Secondary School</h4>
-              <h5>2018 - 2020</h5>
-              <p><em>Aligarh Muslim University, Aligarh</em></p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Experience</h3>
-            <div class="resume-item">
-              <h4>Software Developer Intern - <em><h5>ZWareSoft Pvt. Ltd.</h5></em></h4>
-              <h5>Mar 2024 - Jun 2024</h5>
-              <ul>
-                <li>Developed four dynamic projects, transforming design mockups and wireframes into responsive, interactive web experiences.</li>
-                <li>Used front-end technologies including HTML, CSS, JavaScript, Sass, and Bootstrap to create attractive and user-friendly web pages.</li>
-                <li>Assisted in backend integration and development, gaining hands-on experience with PHP, XAMPP, and MySQL.</li>
-                <li>Collaborated with a cross-functional team, ensuring optimal performance and functionality across multiple browsers and devices.</li>
-                <li>Identified, troubleshot, and resolved front-end issues, ensuring smooth and efficient operation of web applications.</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Web Developer Intern - <em><h5>Prodigy InfoTech</h5></em></h4>
-              <h5>Nov 2023 - Dec 2023</h5>
-              <ul>
-                <li>Utilizing HTML, CSS, and JavaScript to create visually appealing and user-friendly interfaces that
-                  enhance overall usability and accessibility.</li>
-                <li>Managed to delivered four task based projects at a given time.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+  <!-- CASE STUDIES -->
+  <section id="work">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="kicker">Case studies</div>
+        <h2>Selected work</h2>
+        <p>Problem, design decisions, failure modes and what I would change. Client names and code are not shown.</p>
       </div>
-    </section><!-- End Resume Section -->
+      <div class="grid3">
+        <article class="card reveal">
+          <div class="ico">&#9989;</div>
+          <h3>Making AI agents safe to run on live stores</h3>
+          <p>Verify-before-report flows, structured human-in-the-loop questions and approval gates for agents that change live e-commerce stores.</p>
+          <div class="tags"><span class="tag hot">Production</span><span class="tag">HITL</span><span class="tag">Tool calling</span><span class="tag">MCP</span></div>
+          <div class="links2"><a href="case-studies/safe-agents.html">Read case study</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="ico">&#128100;</div>
+          <h3>Face-Forward: attendance with anti-spoofing</h3>
+          <p>Face-recognition attendance system with anti-spoofing and secure check-in/out. Winner at an office hackathon.</p>
+          <div class="tags"><span class="tag">Computer vision</span><span class="tag">TensorFlow.js</span><span class="tag">Vector search</span></div>
+          <div class="links2"><a href="case-studies/face-forward.html">Read case study</a><a href="https://github.com/Gibrail404/face_forward" target="_blank" rel="noopener">Code</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="ico">&#128200;</div>
+          <h3>SmartLeads-AI CRM: Gemini lead scoring</h3>
+          <p>AI-powered CRM that scores leads with an LLM, with analytics, role-based access and a CI/CD pipeline.</p>
+          <div class="tags"><span class="tag">LLM scoring</span><span class="tag">Gemini API</span><span class="tag">CI/CD</span></div>
+          <div class="links2"><a href="case-studies/smartleads-ai.html">Read case study</a><a href="https://github.com/Gibrail404/SmartLeads-AI_CRM" target="_blank" rel="noopener">Code</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- HOW I BUILD -->
+  <section class="alt" id="how">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="kicker">How I build agents</div>
+        <h2>Four rules I do not skip</h2>
+        <p>Most agent failures I have seen were not smart-model problems. They were missing checks.</p>
+      </div>
+      <div class="principles">
+        <div class="pr reveal"><div class="n">1</div><div><b>Verify before reporting</b><span>An agent saves, generates, checks the output, applies it, and only then says it worked.</span></div></div>
+        <div class="pr reveal"><div class="n">2</div><div><b>Ask, do not guess</b><span>When unsure, the agent asks a structured question with options and a response ID.</span></div></div>
+        <div class="pr reveal"><div class="n">3</div><div><b>Approval before live</b><span>Previews first, a person approves, then it ships. One gate removes a whole class of incidents.</span></div></div>
+        <div class="pr reveal"><div class="n">4</div><div><b>Evals for every failure</b><span>Each bug becomes a test case, so the same failure never comes back unnoticed.</span></div></div>
+      </div>
+    </div>
+  </section>
 
-
-    <!-- ======= Project Section ======= -->
-    <section id="project" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p>Welcome to my portfolio! Within these projects, you'll find a testament to my dedication to crafting
-            exceptional software solutions.
-            From conceptualization to implementation, each project reflects my unwavering commitment to delivering
-            solutions that exceed expectations.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-web">Web</li>
-              <!-- <li data-filter=".filter-ds">DS</li> -->
-              <li data-filter=".filter-ml">ML</li>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="kicker">Experience</div>
+        <h2>Where I have worked</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl reveal">
+          <div class="when">Jun 2026 to Present</div>
+          <h3>Applied AI Engineer</h3>
+          <div class="org">Helium &middot; Delhi, India</div>
+          <ul>
+            <li>Own the production AI: a multi-agent system for A/B testing, SEO and editorial publishing, orchestrated from plan through a live storefront with human approval.</li>
+            <li>Built experimentation as a product: multi-arm tests, audience targeting, arm-level measurement and an MCP interface so other agents can run experiments as tools.</li>
+            <li>Built generative catalog and merchandising workflows at brand scale (product content, collection ranking, recommendations) with quality gates before publish.</li>
+            <li>Built keyword intelligence and brand-voice content automation, from research to publish.</li>
+          </ul>
+          <div class="role-sub">
+            <div class="when">Nov 2025 to May 2026 &middot; earlier role at the same company</div>
+            <b>Software Engineer</b>
+            <ul>
+              <li>Built the commerce platform the AI role now runs: catalog intelligence APIs, a conversational shopping assistant, and the first experimentation stack.</li>
             </ul>
           </div>
         </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/project/project1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <!-- <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 1"><i class="bx bx-plus"></i></a> -->
-                <a href="https://docdirect.netlify.app/" title="Demo Live"><i class="bx bx-show"></i></a>
-                <a href="https://github.com/Gibrail404/DocDirect" title="Code Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/project/project2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <!-- <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a> -->
-                <a href="https://helpinghands0.vercel.app" title="Demo Live"><i class="bx bx-show"></i></a>
-                <a href="https://github.com/Gibrail404/Helping-Hands" title="Code Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/project/project3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://gibrail404.github.io/Pixel-Art-Generator/" title="Demo Live"><i class="bx bx-show"></i></a>
-                <a href="https://github.com/Gibrail404/Pixel-Art-Generator" title="Code Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
+        <div class="tl reveal">
+          <div class="when">Sep 2024 to Nov 2025</div>
+          <h3>Full Stack Developer</h3>
+          <div class="org">AdGlobal360 (Hakuhodo) &middot; Gurugram, India</div>
+          <ul>
+            <li>Built lead qualification and lead management platforms for leading automotive brands, with filtering, stage tracking, role-based access and reporting dashboards.</li>
+            <li>Winner, AGL Hackathon 2025 (anti-spoofing check-in/out system).</li>
+          </ul>
         </div>
-
-      </div>
-    </section>
-    <!-- End Project Section -->
-
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Feel free to reach out to me for any inquiries or opportunities. Let's connect and discuss how we can
-            collaborate.</p>
+        <div class="tl reveal">
+          <div class="when">Mar 2024 to Jun 2024</div>
+          <h3>Full Stack Developer (Intern)</h3>
+          <div class="org">ZWareSoft &middot; Remote</div>
+          <ul><li>Built a club membership platform with event scheduling and payments, end to end.</li></ul>
         </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-12 d-flex align-items-stretch ">
-            <div class="info " style="background : #f5f8fd;">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Noida, UP</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>gibrailzaidi@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+91 1234567890</p>
-              </div>
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224357.50123809598!2d77.23701382068629!3d28.522102350413363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1710580387304!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen=""></iframe>
-
-
-            </div>
-
-          </div>
-
-         
-
-        </div>
-
-      </div>
-    </section> <!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-
-      <div class="credits">
-
-        Designed by <a href="https://www.linkedin.com/in/gibrail-zaidi-20023b225/">Gibrail Zaidi</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </section>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- SKILLS -->
+  <section class="alt" id="skills">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="kicker">Skills</div>
+        <h2>The AI stack I work with</h2>
+      </div>
+      <div class="skills">
+        <div class="skill-group reveal"><h3>Agents</h3><div class="chips"><span class="chip">LLM tool calling</span><span class="chip">Multi-agent orchestration</span><span class="chip">MCP</span><span class="chip">Human-in-the-loop</span><span class="chip">Browser-automation agents</span><span class="chip">LangChain</span><span class="chip">n8n</span></div></div>
+        <div class="skill-group reveal"><h3>Retrieval</h3><div class="chips"><span class="chip">RAG pipelines</span><span class="chip">Embeddings</span><span class="chip">Pinecone</span><span class="chip">Qdrant</span><span class="chip">MongoDB Vector Search</span></div></div>
+        <div class="skill-group reveal"><h3>Quality and safety</h3><div class="chips"><span class="chip">Evaluation and quality gates</span><span class="chip">Structured outputs (JSON Schema)</span><span class="chip">Approval flows</span><span class="chip">Guardrails</span><span class="chip">Tracing</span></div></div>
+        <div class="skill-group reveal"><h3>Models and platforms</h3><div class="chips"><span class="chip">Gemini API</span><span class="chip">TensorFlow.js</span><span class="chip">Docker</span><span class="chip">AWS</span><span class="chip">CI/CD</span></div></div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- WRITING + AWARDS -->
+  <section id="writing">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="kicker">Writing and recognition</div>
+        <h2>What I share</h2>
+      </div>
+      <div class="grid3">
+        <article class="card reveal">
+          <div class="ico">&#9997;</div>
+          <h3>Why an AI Agent Should Never Say "Done" Until It Has Checked</h3>
+          <p>Lessons from building agents that change live e-commerce stores.</p>
+          <div class="links2"><a href="https://medium.com/@gibrailzaidi/why-an-ai-agent-should-never-say-done-until-it-has-checked-b7a6f9748ed5" target="_blank" rel="noopener">Read on Medium</a></div>
+        </article>
+        <article class="card reveal">
+          <div class="ico">&#127942;</div>
+          <h3>Awards</h3>
+          <p><b>Winner, AGL Hackathon 2025.</b> Anti-spoofing employee check-in/out system.</p>
+          <p><b>Best Project Award 2024.</b> GNIOT, for technical excellence.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ico">&#127891;</div>
+          <h3>Education</h3>
+          <p><b>B.Tech, Computer Science and Engineering (AI &amp; ML)</b><br>Greater Noida Institute of Technology, Dr. A.P.J. Abdul Kalam Technical University.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- CONTACT -->
+  <section class="alt contact" id="contact">
+    <div class="container">
+      <div class="card reveal">
+        <div class="kicker">Contact</div>
+        <h2>Let us talk about Applied AI roles</h2>
+        <div class="avail"><span class="dot"></span> Open to Applied AI Engineer roles &middot; Dubai/UAE and remote</div>
+        <p style="color:var(--muted);margin-top:0">The fastest way to reach me is email or LinkedIn.</p>
+        <div class="cta" style="justify-content:center">
+          <a class="btn primary" href="mailto:gibrailzaidi@gmail.com">gibrailzaidi@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/gibrailzaidi/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/Gibrail404" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="resume.html">Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
+<footer class="foot">
+  <div class="container">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer</div>
+</footer>
+<script src="script.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
