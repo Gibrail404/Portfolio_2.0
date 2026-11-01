@@ -1,284 +1,309 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gibrail Zaidi | Applied AI Engineer</title>
-  <meta name="description" content="Applied AI Engineer building production LLM agents, MCP tools and human-in-the-loop systems for e-commerce. Case studies, experience and resume.">
-  <meta property="og:title" content="Gibrail Zaidi | Applied AI Engineer">
-  <meta property="og:description" content="Production AI agents that are safe to run on live systems: LLM agents, MCP, RAG, evals and human approval.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gibrailzaidi.netlify.app/">
-  <meta name="twitter:card" content="summary">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Gibrail Zaidi",
-    "jobTitle": "Applied AI Engineer",
-    "url": "https://gibrailzaidi.netlify.app/",
-    "email": "mailto:gibrailzaidi@gmail.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/gibrailzaidi/",
-      "https://github.com/Gibrail404",
-      "https://medium.com/@gibrailzaidi"
-    ],
-    "knowsAbout": ["LLM agents", "Model Context Protocol", "Retrieval-augmented generation", "AI evaluation", "Human-in-the-loop systems"]
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gibrail Zaidi | Applied AI Engineer</title>
+<meta name="description" content="Applied AI Engineer building production LLM agents, MCP tools and human-in-the-loop systems for e-commerce. Case studies, experience and resume.">
+<meta property="og:title" content="Gibrail Zaidi | Applied AI Engineer">
+<meta property="og:description" content="Production AI agents that are safe to run on live systems: LLM agents, MCP, RAG, evals and human approval.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gibrailzaidi.netlify.app/">
+<meta property="og:image" content="https://gibrailzaidi.netlify.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gibrailzaidi.netlify.app/assets/og.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gibrail Zaidi",
+  "jobTitle": "Applied AI Engineer",
+  "url": "https://gibrailzaidi.netlify.app/",
+  "image": "https://gibrailzaidi.netlify.app/assets/profile.webp",
+  "email": "mailto:gibrailzaidi@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/gibrailzaidi/", "https://github.com/Gibrail404", "https://medium.com/@gibrailzaidi"],
+  "knowsAbout": ["LLM agents", "Model Context Protocol", "Retrieval-augmented generation", "AI evaluation", "Human-in-the-loop systems"]
+}
+</script>
 </head>
-<body>
+<body data-root="">
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-<header class="nav">
-  <div class="container">
-    <a class="brand" href="#top" aria-label="Gibrail Zaidi, home"><span class="mono">GZ</span><span>Gibrail Zaidi</span></a>
-    <nav class="links" id="nav-links" aria-label="Primary">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Gibrail Zaidi, home"><span class="logo">GZ</span><span>Gibrail Zaidi</span></a>
+    <nav class="top-links" id="nav-links" aria-label="Primary">
       <a href="#work">Case studies</a>
       <a href="#how">How I build</a>
       <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#writing">Writing</a>
+      <a href="#stack">Stack</a>
+      <a href="#ask">Ask</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div style="display:flex;gap:10px;align-items:center">
-      <a class="btn small primary no-print" href="resume.html">Resume</a>
-      <button class="btn icon-btn" id="theme-toggle" aria-label="Toggle light and dark theme">&#9728;</button>
-      <button class="btn icon-btn menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button>
+    <div class="actions">
+      <button class="btn sm ghost" id="pal-open" aria-haspopup="dialog" aria-label="Open command palette">Search <span class="kbd">Ctrl K</span></button>
+      <a class="btn sm primary" href="resume.html">Resume</a>
+      <button class="btn icon" id="theme-toggle" aria-label="Toggle light and dark theme">&#9728;</button>
+      <button class="btn icon menu" id="menu-btn" aria-label="Open menu">&#9776;</button>
     </div>
   </div>
 </header>
 
 <main id="main">
-  <!-- HERO -->
   <section class="hero" id="top">
-    <div class="container">
+    <div class="wrap">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow"><span class="dot"></span> Open to Applied AI Engineer roles &middot; Dubai/UAE and remote</span>
+          <div class="id-row">
+            <div class="avatar">
+              <span class="ini" aria-hidden="true">GZ</span>
+              <img src="assets/profile.webp" width="104" height="104" alt="Portrait of Gibrail Zaidi" onerror="this.style.display='none'">
+            </div>
+            <div>
+              <div class="prompt" aria-live="polite"><span id="typed">&gt; role: Applied AI Engineer</span><span class="cur"></span></div>
+              <div class="name">Gibrail Zaidi &middot; Delhi NCR, India</div>
+            </div>
+          </div>
           <h1>I build production AI agents that are <span class="grad">safe to run on live systems.</span></h1>
-          <p class="lead">Applied AI Engineer working on LLM agents, MCP tools and human-in-the-loop workflows for e-commerce. I focus on the part after the demo: verification, approval gates, evals and monitoring.</p>
+          <p class="lead">LLM agents, MCP tools and human-in-the-loop workflows for e-commerce. I focus on the part after the demo: verification, approval gates, evals and monitoring.</p>
           <div class="cta">
             <a class="btn primary" href="#work">View case studies</a>
             <a class="btn" href="resume.html">Resume</a>
             <a class="btn" href="mailto:gibrailzaidi@gmail.com">Email me</a>
           </div>
-          <div class="socials">
-            <a href="https://www.linkedin.com/in/gibrailzaidi/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/Gibrail404" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://medium.com/@gibrailzaidi" target="_blank" rel="noopener">Medium</a>
+          <div class="status-row">
+            <span class="chip ok">status: open_to_roles</span>
+            <span class="chip info">Applied AI Engineer</span>
+            <span class="chip">Dubai/UAE &middot; remote</span>
           </div>
         </div>
 
-        <aside class="demo" aria-label="Interactive simulation of an agent with verification and approval">
-          <h3>How my agents ship changes</h3>
-          <div class="sub">Interactive simulation (not a live system). Try a good run and a failing run.</div>
-          <ol class="steps" id="demo-steps">
-            <li class="step" data-n="1"><span class="badge">1</span><span class="txt">Save the change</span></li>
-            <li class="step" data-n="2"><span class="badge">2</span><span class="txt">Generate the result</span></li>
-            <li class="step" data-n="3"><span class="badge">3</span><span class="txt">Check the result</span></li>
-            <li class="step" data-n="4"><span class="badge">4</span><span class="txt">Human approval</span></li>
-            <li class="step" data-n="5"><span class="badge">5</span><span class="txt">Go live</span></li>
+        <aside class="console" aria-label="Interactive simulation of an agent run with verification and human approval">
+          <div class="console-h"><span class="dots"><i></i><i></i><i></i></span> agent.run <span class="sim">simulation, not a live system</span></div>
+          <ol class="spans" id="spans">
+            <li class="sp" data-i="0"><span class="b">1</span><span class="n">plan<small>decide the change</small></span><span class="chip">llm</span></li>
+            <li class="sp" data-i="1"><span class="b">2</span><span class="n">tool_call: save + generate<small>write the change, create the result</small></span><span class="chip">tool</span></li>
+            <li class="sp" data-i="2"><span class="b">3</span><span class="n">check: verify output<small>exists, not empty, correct</small></span><span class="chip">guard</span></li>
+            <li class="sp" data-i="3"><span class="b">4</span><span class="n">approval<small>a person reviews the preview</small></span><span class="chip">human</span></li>
+            <li class="sp" data-i="4"><span class="b">5</span><span class="n">go_live<small>apply and report</small></span><span class="chip">tool</span></li>
           </ol>
-          <div class="demo-actions">
-            <button class="btn small primary" id="demo-run">Run agent task</button>
-            <button class="btn small" id="demo-fail">Simulate a failed check</button>
-            <button class="btn small" id="demo-approve" hidden>Approve</button>
+          <div class="log" id="run-log" aria-live="polite">Press Run to start a simulated agent task.</div>
+          <div class="console-f">
+            <button class="btn sm primary" id="run">Run</button>
+            <button class="btn sm" id="run-fail">Failed check</button>
+            <button class="btn sm" id="approve" hidden>Approve</button>
+            <button class="btn sm" id="reject" hidden>Reject</button>
+            <span class="rule">never say "done" before checking</span>
           </div>
-          <div class="demo-note">Rule: an agent never says "done" until it has checked.</div>
         </aside>
       </div>
-
-      <div class="stats reveal">
-        <div class="stat"><b>2+ years</b><span>shipping production software</span></div>
-        <div class="stat"><b>Multi-agent</b><span>system in production on live stores</span></div>
-        <div class="stat"><b>MCP</b><span>tools so agents can run experiments</span></div>
-        <div class="stat"><b>2 awards</b><span>hackathon and project</span></div>
-      </div>
     </div>
   </section>
 
-  <!-- WHAT I DO -->
-  <section class="alt" id="what">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="kicker">What I do</div>
-        <h2>From a working demo to a system a business can trust</h2>
-        <p>Three areas where I spend most of my time.</p>
-      </div>
-      <div class="grid3">
-        <div class="card reveal"><div class="ico">&#129302;</div><h3>Agents and MCP</h3><p>Multi-agent systems with tool calling, orchestrated from plan to a live storefront. MCP interfaces so other agents can use my tools.</p></div>
-        <div class="card reveal"><div class="ico">&#128269;</div><h3>RAG and evals</h3><p>Retrieval over real data, golden datasets, quality gates before anything is published, and tracing to see what the system did.</p></div>
-        <div class="card reveal"><div class="ico">&#128737;</div><h3>Reliability and safety</h3><p>Human-in-the-loop approval, verify-before-report flows, guardrails and honest failure messages, so agents are safe on live systems.</p></div>
-      </div>
-    </div>
-  </section>
+  <div class="wrap shell">
+    <nav class="rail" aria-label="Page trace">
+      <span class="root">portfolio.run</span>
+      <ol id="rail">
+        <li><a href="#profile" data-for="profile">profile</a></li>
+        <li><a href="#work" data-for="work">case_studies</a></li>
+        <li><a href="#how" data-for="how">how_i_build</a></li>
+        <li><a href="#experience" data-for="experience">experience</a></li>
+        <li><a href="#stack" data-for="stack">stack</a></li>
+        <li><a href="#ask" data-for="ask">ask_profile</a></li>
+        <li><a href="#writing" data-for="writing">writing</a></li>
+        <li><a href="#contact" data-for="contact">contact</a></li>
+      </ol>
+    </nav>
 
-  <!-- CASE STUDIES -->
-  <section id="work">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="kicker">Case studies</div>
-        <h2>Selected work</h2>
-        <p>Problem, design decisions, failure modes and what I would change. Client names and code are not shown.</p>
-      </div>
-      <div class="grid3">
-        <article class="card reveal">
-          <div class="ico">&#9989;</div>
-          <h3>Making AI agents safe to run on live stores</h3>
-          <p>Verify-before-report flows, structured human-in-the-loop questions and approval gates for agents that change live e-commerce stores.</p>
-          <div class="tags"><span class="tag hot">Production</span><span class="tag">HITL</span><span class="tag">Tool calling</span><span class="tag">MCP</span></div>
-          <div class="links2"><a href="case-studies/safe-agents.html">Read case study</a></div>
-        </article>
-        <article class="card reveal">
-          <div class="ico">&#128100;</div>
-          <h3>Face-Forward: attendance with anti-spoofing</h3>
-          <p>Face-recognition attendance system with anti-spoofing and secure check-in/out. Winner at an office hackathon.</p>
-          <div class="tags"><span class="tag">Computer vision</span><span class="tag">TensorFlow.js</span><span class="tag">Vector search</span></div>
-          <div class="links2"><a href="case-studies/face-forward.html">Read case study</a><a href="https://github.com/Gibrail404/face_forward" target="_blank" rel="noopener">Code</a></div>
-        </article>
-        <article class="card reveal">
-          <div class="ico">&#128200;</div>
-          <h3>SmartLeads-AI CRM: Gemini lead scoring</h3>
-          <p>AI-powered CRM that scores leads with an LLM, with analytics, role-based access and a CI/CD pipeline.</p>
-          <div class="tags"><span class="tag">LLM scoring</span><span class="tag">Gemini API</span><span class="tag">CI/CD</span></div>
-          <div class="links2"><a href="case-studies/smartleads-ai.html">Read case study</a><a href="https://github.com/Gibrail404/SmartLeads-AI_CRM" target="_blank" rel="noopener">Code</a></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW I BUILD -->
-  <section class="alt" id="how">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="kicker">How I build agents</div>
-        <h2>Four rules I do not skip</h2>
-        <p>Most agent failures I have seen were not smart-model problems. They were missing checks.</p>
-      </div>
-      <div class="principles">
-        <div class="pr reveal"><div class="n">1</div><div><b>Verify before reporting</b><span>An agent saves, generates, checks the output, applies it, and only then says it worked.</span></div></div>
-        <div class="pr reveal"><div class="n">2</div><div><b>Ask, do not guess</b><span>When unsure, the agent asks a structured question with options and a response ID.</span></div></div>
-        <div class="pr reveal"><div class="n">3</div><div><b>Approval before live</b><span>Previews first, a person approves, then it ships. One gate removes a whole class of incidents.</span></div></div>
-        <div class="pr reveal"><div class="n">4</div><div><b>Evals for every failure</b><span>Each bug becomes a test case, so the same failure never comes back unnoticed.</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="kicker">Experience</div>
-        <h2>Where I have worked</h2>
-      </div>
-      <div class="timeline">
-        <div class="tl reveal">
-          <div class="when">Jun 2026 to Present</div>
-          <h3>Applied AI Engineer</h3>
-          <div class="org">Helium &middot; Delhi, India</div>
-          <ul>
-            <li>Own the production AI: a multi-agent system for A/B testing, SEO and editorial publishing, orchestrated from plan through a live storefront with human approval.</li>
-            <li>Built experimentation as a product: multi-arm tests, audience targeting, arm-level measurement and an MCP interface so other agents can run experiments as tools.</li>
-            <li>Built generative catalog and merchandising workflows at brand scale (product content, collection ranking, recommendations) with quality gates before publish.</li>
-            <li>Built keyword intelligence and brand-voice content automation, from research to publish.</li>
-          </ul>
-          <div class="role-sub">
-            <div class="when">Nov 2025 to May 2026 &middot; earlier role at the same company</div>
-            <b>Software Engineer</b>
-            <ul>
-              <li>Built the commerce platform the AI role now runs: catalog intelligence APIs, a conversational shopping assistant, and the first experimentation stack.</li>
-            </ul>
+    <div>
+      <section class="span reveal" id="profile" data-span>
+        <div class="span-h"><b>span</b> profile <span class="chip info">kind: summary</span><span class="chip ok st">ok</span></div>
+        <div class="span-b">
+          <h2>From a working demo to a system a business can trust</h2>
+          <p class="sub">Three areas where I spend most of my time.</p>
+          <div class="grid3">
+            <div class="tile"><div class="glyph">A</div><h3>Agents and MCP</h3><p>Multi-agent systems with tool calling, orchestrated from plan to a live storefront. MCP interfaces so other agents can use my tools.</p></div>
+            <div class="tile"><div class="glyph">R</div><h3>RAG and evals</h3><p>Retrieval over real data, quality gates before anything is published, and tracing to see what the system did.</p></div>
+            <div class="tile"><div class="glyph">S</div><h3>Reliability and safety</h3><p>Human-in-the-loop approval, verify-before-report flows, guardrails and honest failure messages.</p></div>
           </div>
         </div>
-        <div class="tl reveal">
-          <div class="when">Sep 2024 to Nov 2025</div>
-          <h3>Full Stack Developer</h3>
-          <div class="org">AdGlobal360 (Hakuhodo) &middot; Gurugram, India</div>
-          <ul>
-            <li>Built lead qualification and lead management platforms for leading automotive brands, with filtering, stage tracking, role-based access and reporting dashboards.</li>
-            <li>Winner, AGL Hackathon 2025 (anti-spoofing check-in/out system).</li>
-          </ul>
-        </div>
-        <div class="tl reveal">
-          <div class="when">Mar 2024 to Jun 2024</div>
-          <h3>Full Stack Developer (Intern)</h3>
-          <div class="org">ZWareSoft &middot; Remote</div>
-          <ul><li>Built a club membership platform with event scheduling and payments, end to end.</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- SKILLS -->
-  <section class="alt" id="skills">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="kicker">Skills</div>
-        <h2>The AI stack I work with</h2>
-      </div>
-      <div class="skills">
-        <div class="skill-group reveal"><h3>Agents</h3><div class="chips"><span class="chip">LLM tool calling</span><span class="chip">Multi-agent orchestration</span><span class="chip">MCP</span><span class="chip">Human-in-the-loop</span><span class="chip">Browser-automation agents</span><span class="chip">LangChain</span><span class="chip">n8n</span></div></div>
-        <div class="skill-group reveal"><h3>Retrieval</h3><div class="chips"><span class="chip">RAG pipelines</span><span class="chip">Embeddings</span><span class="chip">Pinecone</span><span class="chip">Qdrant</span><span class="chip">MongoDB Vector Search</span></div></div>
-        <div class="skill-group reveal"><h3>Quality and safety</h3><div class="chips"><span class="chip">Evaluation and quality gates</span><span class="chip">Structured outputs (JSON Schema)</span><span class="chip">Approval flows</span><span class="chip">Guardrails</span><span class="chip">Tracing</span></div></div>
-        <div class="skill-group reveal"><h3>Models and platforms</h3><div class="chips"><span class="chip">Gemini API</span><span class="chip">TensorFlow.js</span><span class="chip">Docker</span><span class="chip">AWS</span><span class="chip">CI/CD</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WRITING + AWARDS -->
-  <section id="writing">
-    <div class="container">
-      <div class="sec-head reveal">
-        <div class="kicker">Writing and recognition</div>
-        <h2>What I share</h2>
-      </div>
-      <div class="grid3">
-        <article class="card reveal">
-          <div class="ico">&#9997;</div>
-          <h3>Why an AI Agent Should Never Say "Done" Until It Has Checked</h3>
-          <p>Lessons from building agents that change live e-commerce stores.</p>
-          <div class="links2"><a href="https://medium.com/@gibrailzaidi/why-an-ai-agent-should-never-say-done-until-it-has-checked-b7a6f9748ed5" target="_blank" rel="noopener">Read on Medium</a></div>
-        </article>
-        <article class="card reveal">
-          <div class="ico">&#127942;</div>
-          <h3>Awards</h3>
-          <p><b>Winner, AGL Hackathon 2025.</b> Anti-spoofing employee check-in/out system.</p>
-          <p><b>Best Project Award 2024.</b> GNIOT, for technical excellence.</p>
-        </article>
-        <article class="card reveal">
-          <div class="ico">&#127891;</div>
-          <h3>Education</h3>
-          <p><b>B.Tech, Computer Science and Engineering (AI &amp; ML)</b><br>Greater Noida Institute of Technology, Dr. A.P.J. Abdul Kalam Technical University.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="alt contact" id="contact">
-    <div class="container">
-      <div class="card reveal">
-        <div class="kicker">Contact</div>
-        <h2>Let us talk about Applied AI roles</h2>
-        <div class="avail"><span class="dot"></span> Open to Applied AI Engineer roles &middot; Dubai/UAE and remote</div>
-        <p style="color:var(--muted);margin-top:0">The fastest way to reach me is email or LinkedIn.</p>
-        <div class="cta" style="justify-content:center">
-          <a class="btn primary" href="mailto:gibrailzaidi@gmail.com">gibrailzaidi@gmail.com</a>
-          <a class="btn" href="https://www.linkedin.com/in/gibrailzaidi/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/Gibrail404" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="resume.html">Resume</a>
+      <section class="span reveal" id="work" data-span>
+        <div class="span-h"><b>span</b> case_studies <span class="chip info">kind: tool_call</span><span class="chip ok st">ok</span></div>
+        <div class="span-b">
+          <h2>Selected work</h2>
+          <p class="sub">Problem, design decisions, failure modes and what I would change. Each case study has an interactive architecture explorer. Client names and code are not shown.</p>
+          <div class="grid3">
+            <article class="tile">
+              <div class="glyph">01</div>
+              <h3>Making AI agents safe to run on live stores</h3>
+              <p>Verify-before-report flows, structured human-in-the-loop questions and approval gates for agents that change live e-commerce stores.</p>
+              <div class="tags"><span class="chip ok">production</span><span class="chip">HITL</span><span class="chip">MCP</span></div>
+              <a class="go" href="case-studies/safe-agents.html">Open trace &rarr;</a>
+            </article>
+            <article class="tile">
+              <div class="glyph">02</div>
+              <h3>Face-Forward: attendance with anti-spoofing</h3>
+              <p>Face-recognition attendance with anti-spoofing and secure check-in/out. Office hackathon winner.</p>
+              <div class="tags"><span class="chip">computer vision</span><span class="chip">vector search</span></div>
+              <a class="go" href="case-studies/face-forward.html">Open trace &rarr;</a><a class="go" href="https://github.com/Gibrail404/face_forward" target="_blank" rel="noopener">Code</a>
+            </article>
+            <article class="tile">
+              <div class="glyph">03</div>
+              <h3>SmartLeads-AI CRM: Gemini lead scoring</h3>
+              <p>AI-powered CRM that scores leads with an LLM, with analytics, roles and a CI/CD pipeline.</p>
+              <div class="tags"><span class="chip">LLM scoring</span><span class="chip">CI/CD</span></div>
+              <a class="go" href="case-studies/smartleads-ai.html">Open trace &rarr;</a><a class="go" href="https://github.com/Gibrail404/SmartLeads-AI_CRM" target="_blank" rel="noopener">Code</a>
+            </article>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section class="span reveal" id="how" data-span>
+        <div class="span-h"><b>span</b> how_i_build <span class="chip info">kind: guardrail</span><span class="chip ok st">ok</span></div>
+        <div class="span-b">
+          <h2>Four rules I do not skip</h2>
+          <p class="sub">Most agent failures I have seen were not smart-model problems. They were missing checks.</p>
+          <div class="grid2">
+            <div class="tile rule-card"><div class="num">1</div><div><b>Verify before reporting</b><span>Save, generate, check the output, apply, and only then say it worked.</span></div></div>
+            <div class="tile rule-card"><div class="num">2</div><div><b>Ask, do not guess</b><span>When unsure, the agent asks a structured question with options and a response ID.</span></div></div>
+            <div class="tile rule-card"><div class="num">3</div><div><b>Approval before live</b><span>Previews first, a person approves, then it ships. One gate removes a class of incidents.</span></div></div>
+            <div class="tile rule-card"><div class="num">4</div><div><b>Evals for every failure</b><span>Each bug becomes a test case, so the same failure never comes back unnoticed.</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="span reveal" id="experience" data-span>
+        <div class="span-h"><b>span</b> experience <span class="chip info">kind: timeline</span><span class="chip ok st">ok</span></div>
+        <div class="span-b">
+          <h2>Where I have worked</h2>
+          <p class="sub">Latest first.</p>
+          <div class="tline">
+            <div class="ev">
+              <div class="when">jun 2026 &rarr; present</div>
+              <h3>Applied AI Engineer</h3>
+              <div class="org">Helium &middot; Delhi, India</div>
+              <ul>
+                <li>Own the production AI: a multi-agent system for A/B testing, SEO and editorial publishing, orchestrated from plan through a live storefront with human approval.</li>
+                <li>Built experimentation as a product: multi-arm tests, audience targeting, arm-level measurement and an MCP interface so other agents can run experiments as tools.</li>
+                <li>Built generative catalog and merchandising workflows at brand scale with quality gates before publish.</li>
+                <li>Built keyword intelligence and brand-voice content automation, from research to publish.</li>
+              </ul>
+              <div class="sub-ev">
+                <div class="when">nov 2025 &rarr; may 2026 &middot; earlier role, same company</div>
+                <b>Software Engineer</b>
+                <ul><li>Built the commerce platform the AI role now runs: catalog intelligence APIs, a conversational shopping assistant and the first experimentation stack.</li></ul>
+              </div>
+            </div>
+            <div class="ev">
+              <div class="when">sep 2024 &rarr; nov 2025</div>
+              <h3>Full Stack Developer</h3>
+              <div class="org">AdGlobal360 (Hakuhodo) &middot; Gurugram, India</div>
+              <ul>
+                <li>Built lead qualification and lead management platforms for leading automotive brands, with filtering, stage tracking, role-based access and reporting dashboards.</li>
+                <li>Winner, AGL Hackathon 2025 (anti-spoofing check-in/out system).</li>
+              </ul>
+            </div>
+            <div class="ev">
+              <div class="when">mar 2024 &rarr; jun 2024</div>
+              <h3>Full Stack Developer (Intern)</h3>
+              <div class="org">ZWareSoft &middot; Remote</div>
+              <ul><li>Built a club membership platform with event scheduling and payments, end to end.</li></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="span reveal" id="stack" data-span>
+        <div class="span-h"><b>span</b> stack <span class="chip info">kind: tools</span><span class="chip ok st">ok</span></div>
+        <div class="span-b">
+          <h2>The AI stack I work with</h2>
+          <p class="sub">Grouped by what each part of the system does.</p>
+          <div class="grid2">
+            <div class="group"><h3>agents</h3><div class="pills"><span class="pill">LLM tool calling</span><span class="pill">Multi-agent orchestration</span><span class="pill">MCP</span><span class="pill">Human-in-the-loop</span><span class="pill">Browser-automation agents</span><span class="pill">LangChain</span><span class="pill">n8n</span></div></div>
+            <div class="group"><h3>retrieval</h3><div class="pills"><span class="pill">RAG pipelines</span><span class="pill">Embeddings</span><span class="pill">Pinecone</span><span class="pill">Qdrant</span><span class="pill">MongoDB Vector Search</span></div></div>
+            <div class="group"><h3>quality_and_safety</h3><div class="pills"><span class="pill">Evaluation and quality gates</span><span class="pill">Structured outputs (JSON Schema)</span><span class="pill">Approval flows</span><span class="pill">Guardrails</span><span class="pill">Tracing</span></div></div>
+            <div class="group"><h3>models_and_platforms</h3><div class="pills"><span class="pill">Gemini API</span><span class="pill">TensorFlow.js</span><span class="pill">Docker</span><span class="pill">AWS</span><span class="pill">CI/CD</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="span reveal" id="ask" data-span>
+        <div class="span-h"><b>span</b> ask_profile <span class="chip info">kind: retrieval</span><span class="chip wait st">scripted answers</span></div>
+        <div class="span-b">
+          <h2>Ask my profile</h2>
+          <p class="sub">Pick a question or type your own. Answers are written by me and matched by keywords. This is not an LLM.</p>
+          <div class="qa-chips" id="qa-chips"></div>
+          <div class="qa-log" id="qa-log" aria-live="polite"><div class="msg a">Hi, I am Gibrail. Ask about my stack, evals, human approval, MCP, availability or what I have shipped.</div></div>
+          <form class="qa-form" id="qa-form" autocomplete="off">
+            <input id="qa-input" type="text" placeholder="Type a question, for example: how do you evaluate agents?" aria-label="Ask a question about my profile">
+            <button class="btn primary" type="submit">Ask</button>
+          </form>
+          <p class="note">retrieval: keyword match over a small answer table, no network, no model</p>
+        </div>
+      </section>
+
+      <section class="span reveal" id="writing" data-span>
+        <div class="span-h"><b>span</b> writing <span class="chip info">kind: output</span><span class="chip ok st">ok</span></div>
+        <div class="span-b">
+          <h2>Writing and recognition</h2>
+          <div class="grid3" style="margin-top:14px">
+            <article class="tile">
+              <div class="glyph">W</div>
+              <h3>Why an AI Agent Should Never Say "Done" Until It Has Checked</h3>
+              <p>Lessons from building agents that change live e-commerce stores.</p>
+              <a class="go" href="https://medium.com/@gibrailzaidi/why-an-ai-agent-should-never-say-done-until-it-has-checked-b7a6f9748ed5" target="_blank" rel="noopener">Read on Medium &rarr;</a>
+            </article>
+            <article class="tile">
+              <div class="glyph">&#9733;</div>
+              <h3>Awards</h3>
+              <p><b>Winner, AGL Hackathon 2025.</b> Anti-spoofing employee check-in/out system.</p>
+              <p><b>Best Project Award 2024.</b> GNIOT, for technical excellence.</p>
+            </article>
+            <article class="tile">
+              <div class="glyph">E</div>
+              <h3>Education</h3>
+              <p><b>B.Tech, Computer Science and Engineering (AI &amp; ML)</b><br>Greater Noida Institute of Technology, Dr. A.P.J. Abdul Kalam Technical University.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="span reveal" id="contact" data-span>
+        <div class="span-h"><b>span</b> contact <span class="chip info">kind: approval</span><span class="chip wait st">status: awaiting_approval</span></div>
+        <div class="span-b">
+          <div class="contact-box">
+            <h2>Let us talk about Applied AI roles</h2>
+            <p>Open to Applied AI Engineer roles in Dubai/UAE and remote. The fastest way to reach me is email or LinkedIn. Your message is the approval step.</p>
+            <div class="cta">
+              <a class="btn primary" href="mailto:gibrailzaidi@gmail.com">Approve: gibrailzaidi@gmail.com</a>
+              <a class="btn" href="https://www.linkedin.com/in/gibrailzaidi/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="https://github.com/Gibrail404" target="_blank" rel="noopener">GitHub</a>
+              <a class="btn" href="resume.html">Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </main>
 
 <footer class="foot">
-  <div class="container">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer</div>
+  <div class="wrap">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Applied AI Engineer &middot; press Ctrl K to jump anywhere</div>
 </footer>
+
+<div class="pal-back" id="pal-back" role="presentation">
+  <div class="pal" role="dialog" aria-modal="true" aria-label="Command palette">
+    <input id="pal-input" type="text" placeholder="Jump to a section, case study or link..." aria-label="Search commands" autocomplete="off">
+    <ul id="pal-list" role="listbox"></ul>
+    <div class="pal-f"><span>&uarr;&darr; move</span><span>Enter open</span><span>Esc close</span></div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 <script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
 </body>
