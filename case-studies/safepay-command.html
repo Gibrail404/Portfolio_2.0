@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafePay Command: AI payment-risk platform | Gibrail Zaidi</title>
+<meta name="description" content="Case study: a payment-risk platform where a risk model and versioned rules decide, LLM steps sit behind a safety gateway, and every decision goes into a tamper-evident audit ledger.">
+<meta property="og:title" content="SafePay Command: AI payment-risk platform | Gibrail Zaidi">
+<meta property="og:description" content="Case study: a payment-risk platform where a risk model and versioned rules decide, LLM steps sit behind a safety gateway, and every decision goes into a tamper-evident audit ledger.">
+<meta property="og:image" content="https://gibrailzaidi.netlify.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body data-root="../">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="../index.html" aria-label="Gibrail Zaidi, home"><span class="logo">GZ</span><span>Gibrail Zaidi</span></a>
+<nav class="top-links" id="nav-links" aria-label="Primary"><a href="../index.html#work">Case studies</a><a href="../index.html#experience">Experience</a><a href="../index.html#ask">Ask</a><a href="../index.html#contact">Contact</a></nav>
+<div class="actions">
+<button class="btn sm ghost" id="pal-open" aria-haspopup="dialog" aria-label="Open command palette">Search <span class="kbd">Ctrl K</span></button>
+<a class="btn sm primary" href="../resume.html">Resume</a>
+<button class="btn icon" id="theme-toggle" aria-label="Toggle light and dark theme">&#9728;</button>
+<button class="btn icon menu" id="menu-btn" aria-label="Open menu">&#9776;</button>
+</div>
+</div>
+</header>
+<main id="main">
+
+<section class="cs-top"><div class="wrap">
+<a class="crumb" href="../index.html#work">&larr; portfolio.run / case_studies / safepay_command</a>
+<div class="status-row"><span class="chip info">kind: case_study</span><span class="chip ok">status: live demo</span></div>
+<h1>SafePay Command: AI payment-risk platform</h1>
+<p class="lead">Scams where the customer sends the money look like normal payments, so a risk model alone cannot see them. This platform asks a few questions, lets versioned rules decide, and records every step so it can be checked.</p>
+<div class="meta"><div><small>Type</small>Personal project</div><div><small>Domain</small>Fintech, payment risk</div><div><small>Focus</small>Evaluation, safety, auditability</div><div><small>Links</small><a href="https://safepay-command.vercel.app" target="_blank" rel="noopener">Live demo</a> &middot; <a href="https://github.com/Gibrail404/safepay-command" target="_blank" rel="noopener">Code</a></div></div>
+</div></section>
+
+<div class="wrap"><article class="cs">
+<h2>The problem</h2>
+<p>Stopping too many payments annoys good customers, and missing scams loses money. In authorised-push scams the payment is made by the real customer, so only the customer's story reveals the problem. Sanctions screening has the same trade-off between missed matches and false alerts.</p>
+<h2>What I built</h2>
+<ul>
+<li>A LightGBM risk model trained on a real public card-payment dataset, with time-ordered splits and calibrated bands.</li>
+<li>A question step: up to three customer questions when a payment looks risky, with warning signs read from the answers. Flags can only add friction.</li>
+<li>Versioned rules (policy as data) that decide allow, warn, hold or block. The LLM never makes the final decision.</li>
+<li>An LLM gateway with PII redaction, injection screening, Pydantic schema validation, sentence-level fact-checking, fallbacks and a daily cost cap.</li>
+<li>Fuzzy sanctions-list name screening (OFAC) and an analyst case workflow with recorded overrides.</li>
+<li>A tamper-evident hash-chained audit ledger that the browser can verify.</li>
+<li>Accounts, roles and rate limits; deployed on Vercel, Railway and Neon; 320 automated tests including PostgreSQL race-condition tests.</li>
+</ul>
+
+<h2>Architecture explorer</h2>
+<p class="xhint">Click a node to see the decision, the risk and the next step.</p>
+<div class="explorer">
+<div class="xnodes" role="group" aria-label="Architecture nodes"><button class="xnode " type="button" aria-pressed="false" data-t="Risk model" data-a="LightGBM trained on a real public card-payment dataset, split by time, with calibrated bands. The rules read the band, not the raw score." data-b="It cannot see a scam the customer carries out themselves: the payment looks ordinary." data-c="That is why the question step exists.">Risk model<span class="k">model</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Question step" data-a="Ask only when there is a reason, up to three questions, then read warning signs from the answers (told to pay, urgency, secrecy, unknown payee)." data-b="Coached victims, who repeat the scammer&#x27;s cover story, are mostly missed." data-c="Test more question designs against real, consented conversations instead of simulated ones.">Question step<span class="k">llm</span></button><button class="xnode warn" type="button" aria-pressed="false" data-t="LLM gateway" data-a="Redact personal data, screen for injection, validate the output against a schema, check every sentence against the facts, fall back to plain text, and cap daily cost." data-b="Injection screening is only a heuristic, and names were fully removed 92% (US-style) and 76% (non-US) of the time on unseen words." data-c="The LLM has no tools and the rules decide, so a successful injection has nothing to grab. Improve name redaction.">LLM gateway<span class="k">guard</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Policy rules" data-a="Versioned rules written as data decide allow, warn, hold or block. Flags can only add friction." data-b="Fixed thresholds are blunt and can bother good customers." data-c="Estimate the effect of a rule change with the Decision Lab before launching it.">Policy rules<span class="k">rules</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Audit ledger" data-a="Each entry hashes the previous one, so editing history breaks the chain. The Audit page re-checks the chain in the browser." data-b="Someone with full database control could rewrite everything." data-c="Keep fingerprints somewhere the operator cannot edit.">Audit ledger<span class="k">store</span></button><button class="xnode " type="button" aria-pressed="false" data-t="Evaluation" data-a="Held-out data, confidence intervals, simple baselines, and negative results reported." data-b="Customers and analysts are simulated, so results describe the simulation only." data-c="Run a small pilot with real, consented conversations.">Evaluation<span class="k">eval</span></button></div>
+<aside class="xpanel" id="xpanel" aria-live="polite"><h4></h4><dl><div><dt>Decision</dt><dd class="da"></dd></div><div><dt>Risk or failure</dt><dd class="db"></dd></div><div><dt>Fix or next step</dt><dd class="dc"></dd></div></dl></aside>
+</div>
+
+<h2>Architecture</h2>
+<div class="flow"><span class="node">Payment</span><span class="arrow">&rarr;</span><span class="node">Risk model</span><span class="arrow">&rarr;</span><span class="node">Questions</span><span class="arrow">&rarr;</span><span class="node">Rules decide</span><span class="arrow">&rarr;</span><span class="node">Audit ledger</span></div>
+
+<h2>Results</h2>
+<ul>
+<li><strong>Risk model:</strong> average precision 0.812 on a time-ordered test set with 75 frauds (95% interval 0.727 to 0.894). At an alert level that lets 1% of good payments alert, recall is 88% and precision 14%.</li>
+<li><strong>Simulated scams:</strong> rules alone, and rules plus the model, caught 0 of 80 by design. Adding questions caught about half to two thirds. Pooled over two test sets, AI-written questions held 57% and fixed questions 50% (p = 0.052), and the two catch different scams. Coached victims are mostly missed.</li>
+<li><strong>What did not help:</strong> graph features added +0.000 average precision, and a model trained before a market shutdown fell from 0.912 to 0.048 afterwards.</li>
+</ul>
+<h2>Design decisions</h2>
+<ul>
+<li><strong>The LLM never decides.</strong> It asks, explains and summarises; rules decide.</li>
+<li><strong>Every AI step has a plain fallback,</strong> so the flow works when the model is slow or wrong.</li>
+<li><strong>Report what did not work.</strong> Negative and inconclusive results are published with the rest.</li>
+</ul>
+<h2>What I would improve</h2>
+<ul>
+<li>Replace simulated customers with real, consented conversations in a small pilot.</li>
+<li>Add production monitoring for drift, alert rates and AI fallback rates.</li>
+<li>Improve name redaction and move rate limiting to a shared store.</li>
+</ul>
+<div class="next"><a class="btn" href="../index.html#work">&larr; All case studies</a><a class="btn primary" href="safe-agents.html">Next: Safe AI agents &rarr;</a></div>
+</article></div>
+
+</main>
+<footer class="foot"><div class="wrap">&copy; <span id="yr">2026</span> Gibrail Zaidi &middot; Software Developer, AI products &middot; press Ctrl K to jump anywhere</div></footer>
+<div class="pal-back" id="pal-back" role="presentation">
+<div class="pal" role="dialog" aria-modal="true" aria-label="Command palette">
+<input id="pal-input" type="text" placeholder="Jump to a section, case study or link..." aria-label="Search commands" autocomplete="off">
+<ul id="pal-list" role="listbox"></ul>
+<div class="pal-f"><span>&uarr;&darr; move</span><span>Enter open</span><span>Esc close</span></div>
+</div>
+</div>
+<script src="../script.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -125,6 +125,7 @@
     { t: "Ask my profile", g: "section", h: home + "#ask" },
     { t: "Writing and awards", g: "section", h: home + "#writing" },
     { t: "Contact", g: "section", h: home + "#contact" },
+    { t: "Case study: SafePay Command, AI payment-risk platform", g: "case study", h: base + "case-studies/safepay-command.html" },
     { t: "Case study: Making AI agents safe to run on live stores", g: "case study", h: base + "case-studies/safe-agents.html" },
     { t: "Case study: Face-Forward", g: "case study", h: base + "case-studies/face-forward.html" },
     { t: "Case study: SmartLeads-AI CRM", g: "case study", h: base + "case-studies/smartleads-ai.html" },
