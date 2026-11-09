@@ -130,6 +130,7 @@
     { t: "Case study: Face-Forward", g: "case study", h: base + "case-studies/face-forward.html" },
     { t: "Case study: SmartLeads-AI CRM", g: "case study", h: base + "case-studies/smartleads-ai.html" },
     { t: "Resume", g: "page", h: base + "resume.html" },
+    { t: "Download resume (PDF)", g: "link", h: base + "assets/Gibrail_Zaidi_Resume.pdf" },
     { t: "Email gibrailzaidi@gmail.com", g: "contact", h: "mailto:gibrailzaidi@gmail.com" },
     { t: "LinkedIn", g: "link", h: "https://www.linkedin.com/in/gibrailzaidi/", ext: true },
     { t: "GitHub", g: "link", h: "https://github.com/Gibrail404", ext: true },
