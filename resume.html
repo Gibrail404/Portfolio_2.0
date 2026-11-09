@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resume | Gibrail Zaidi</title>
-<meta name="description" content="Resume of Gibrail Zaidi, Applied AI Engineer.">
+<meta name="description" content="Resume of Gibrail Zaidi, software developer building LLM agents and AI products.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
 :root{--ink:#111827;--muted:#4b5563;--line:#d1d5db;--accent:#1d4ed8}
@@ -31,46 +31,54 @@ p{margin:6px 0;font-size:14px}
 <div class="bar"><a href="index.html">&larr; Back to site</a><button class="p" onclick="window.print()">Download as PDF (Print, Save as PDF)</button></div>
 <div class="page">
 <h1>Gibrail Zaidi</h1>
-<div class="role">Applied AI Engineer | LLM agents, MCP and human-in-the-loop systems</div>
+<div class="role">Software Developer | LLM agents, MCP tools and AI data pipelines</div>
 <div class="contact">Delhi NCR, India &middot; <a href="mailto:gibrailzaidi@gmail.com">gibrailzaidi@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/gibrailzaidi/">linkedin.com/in/gibrailzaidi</a> &middot; <a href="https://github.com/Gibrail404">github.com/Gibrail404</a> &middot; <a href="https://medium.com/@gibrailzaidi">medium.com/@gibrailzaidi</a></div>
 
 <h2>Summary</h2>
-<p>Applied AI Engineer with 2+ years of professional experience shipping production software, the last year building AI agents. I own a multi-agent system (A/B testing, SEO, editorial publishing) running on live e-commerce stores, with quality gates and human approval before anything goes live. Experience with LLMs, agent orchestration, MCP, RAG and vector databases. Open to Applied AI Engineer roles in Dubai/UAE and remote.</p>
-
-<h2>Skills</h2>
-<p><b>Agents:</b> LLM tool calling, multi-agent orchestration, MCP, human-in-the-loop workflows, browser-automation agents, LangChain, n8n.<br>
-<b>Retrieval:</b> RAG pipelines, embeddings, Pinecone, Qdrant, MongoDB Vector Search.<br>
-<b>Quality and safety:</b> evaluation and quality gates, structured outputs (JSON Schema), approval flows, guardrails, tracing.<br>
-<b>Models and platforms:</b> Gemini API, TensorFlow.js, Docker, AWS, CI/CD.</p>
+<p>Software developer with 2+ years of experience in full-stack engineering and AI-powered product development. Experienced in building LLM agents, AI workflows and data pipelines. Built and deployed SafePay Command, an AI-powered payment-risk platform using machine learning and LLM-based workflows.</p>
 
 <h2>Experience</h2>
-<h3>Applied AI Engineer, Helium</h3>
-<div class="row"><span>Delhi, India (on-site)</span><span>Jun 2026 to Present (at Helium since Nov 2025)</span></div>
+<h3>Software Developer, Helium</h3>
+<div class="row"><span>India</span><span>Nov 2025 to Present</span></div>
 <ul>
-<li>Own the production AI: a multi-agent system for A/B testing, SEO and editorial publishing, orchestrated from plan through a live storefront, with human approval before going live.</li>
-<li>Built experimentation as a product: multi-arm tests, audience targeting, arm-level measurement and an MCP interface so other agents can run experiments as tools.</li>
-<li>Built generative catalog and merchandising workflows at brand scale with quality gates before publish.</li>
-<li>Built keyword intelligence and brand-voice content automation, from research to publish.</li>
-<li>Earlier at the same company (Nov 2025 to May 2026) as Software Engineer: built catalog intelligence APIs, a conversational shopping assistant and the first experimentation stack.</li>
+<li>Built an LLM generation pipeline (NestJS, Bull/Redis queues) running prompt configs (text, image, JSON, FAQ) over catalog resources, with versioned outputs so only stale or missing values regenerate.</li>
+<li>Extended a multi-agent platform (specialist agents that delegate work to each other) with an A/B testing agent, SEO and blog-publishing tools, and a human-in-the-loop tool that asks structured multiple-choice questions before ambiguous or irreversible actions.</li>
+<li>Built an MCP server so AI clients can create, preview and activate A/B experiments through a fixed action catalog, with confirmation for destructive actions.</li>
+<li>Developed a keyword research pipeline (LLM query expansion, DataForSEO) with scoring, streaming results, resumable runs and per-run cost tracking.</li>
 </ul>
-<h3>Full Stack Developer, AdGlobal360 (Hakuhodo)</h3>
-<div class="row"><span>Gurugram, India</span><span>Sep 2024 to Nov 2025</span></div>
+<h3>Software Developer, AdGlobal360 (Hakuhodo)</h3>
+<div class="row"><span>India (intern Sep to Nov 2024, full-time from Dec 2024)</span><span>Sep 2024 to Nov 2025</span></div>
 <ul>
-<li>Built lead qualification and lead management platforms for leading automotive brands, with filtering, stage tracking, role-based access and reporting dashboards.</li>
-<li>Winner, AGL Hackathon 2025 (anti-spoofing check-in/out system).</li>
+<li>Built lead-management platforms for automotive brands (qualification, stage tracking, assignment) with role-based access control, filters and dashboards.</li>
+<li>Delivered Next.js interfaces and secure NestJS and Node.js/Express APIs.</li>
 </ul>
-<h3>Full Stack Developer (Intern), ZWareSoft</h3>
+<h3>Full Stack Developer, ZWareSoft</h3>
 <div class="row"><span>Remote</span><span>Mar 2024 to Jun 2024</span></div>
-<ul><li>Built a club membership platform with event scheduling and payments, end to end.</li></ul>
+<ul><li>Built a club-management platform (memberships, events, payments) with the MERN stack.</li></ul>
 
 <h2>Projects</h2>
+<h3>SafePay Command: AI payment-risk platform</h3>
+<div class="row"><span>Python, FastAPI, LightGBM, PostgreSQL, Next.js</span><span>safepay-command.vercel.app &middot; github.com/Gibrail404/safepay-command</span></div>
 <ul>
-<li><b>Face-Forward:</b> face-recognition attendance system with anti-spoofing. React, Node.js, MongoDB Vector Search, TensorFlow.js. github.com/Gibrail404/face_forward</li>
+<li>Built a payment decision engine: a LightGBM risk model scores each payment, customers get up to three questions when a payment looks risky, and versioned rules decide allow, warn, hold or block; the LLM never makes the final decision.</li>
+<li>Added LLM steps (questions, customer messages, case summaries) behind a gateway with PII redaction, Pydantic schema validation, fact-checking of every sentence, fallbacks and a daily cost cap.</li>
+<li>Built fuzzy sanctions-list name screening (OFAC, TF-IDF matching), an analyst case workflow with recorded overrides, and a tamper-evident hash-chained audit ledger.</li>
+<li>Evaluated on held-out data (0.812 average precision; 88% recall at a 1% false-alert budget), compared AI and graph features against simple baselines, and wrote 320 tests including PostgreSQL race conditions.</li>
+</ul>
+<ul>
+<li><b>Face-Forward:</b> facial-recognition attendance system with anti-spoofing and secure check-in/out. Next.js, MongoDB Vector Search, TensorFlow.js. github.com/Gibrail404/face_forward</li>
 <li><b>SmartLeads-AI CRM:</b> AI-powered CRM with Gemini lead scoring, analytics dashboard and CI/CD. github.com/Gibrail404/SmartLeads-AI_CRM</li>
 </ul>
 
+<h2>Technical skills</h2>
+<p><b>Languages:</b> Python, TypeScript, JavaScript, SQL<br>
+<b>AI/ML:</b> LLM agents, tool calling, structured outputs (Pydantic, Zod), guardrails, MCP, RAG (LangChain), model evaluation; LightGBM, scikit-learn; PyTorch<br>
+<b>Backend and data:</b> FastAPI, NestJS, Node.js/Express, REST APIs, Bull and Redis queues; PostgreSQL, MongoDB, MySQL<br>
+<b>Frontend:</b> React, Next.js, Tailwind CSS<br>
+<b>Cloud and tools:</b> AWS, Docker, Git/GitHub, Grafana, pytest, Playwright</p>
+
 <h2>Education and awards</h2>
-<p><b>B.Tech, Computer Science and Engineering (AI &amp; ML)</b>, Greater Noida Institute of Technology (Dr. A.P.J. Abdul Kalam Technical University), First Division.</p>
-<p>Winner, AGL Hackathon 2025 &middot; Best Project Award 2024, GNIOT.</p>
+<p><b>B.Tech, Computer Science and Engineering (AI &amp; ML)</b>, GNIOT, Greater Noida (Dr. A.P.J. Abdul Kalam Technical University), 2025.</p>
+<p>Winner, AGL Hackathon 2025 (anti-spoofing check-in) &middot; Winner, Smart India Hackathon 2023 &middot; Best Project Award 2024, GNIOT.</p>
 </div>
 </body></html>
